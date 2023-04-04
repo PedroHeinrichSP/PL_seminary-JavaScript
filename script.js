@@ -8,7 +8,7 @@ class Slideshow {
       showArrows: false,
       showPagination: true,
       duration: 10000,
-      autoplay: true };
+      autoplay: false };
 
 
     let options = Object.assign({}, defaultOptions, userOptions);
