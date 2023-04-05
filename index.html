@@ -119,10 +119,10 @@ for(i=0; i<10; i++){
 							</code>
 						</pre>
 					</a>
-					<span id="resultBox" class="slideshow__slide-caption-content -coderun">
+					<div id="resultBox" class="slideshow__slide-caption-content -coderun">
 
-					</span>
-					<button id="execBtn" class="o-button -white">Executar</button>
+					</div>
+					<button id="execBtn" class="o-button -white js-slider-home-button">Executar</button>
 					<script>
 						// Get references to the code and result elements
 						const codeBox = document.getElementById('codeBox');
@@ -134,15 +134,17 @@ for(i=0; i<10; i++){
 						// Add click event listener to execute button
 						executeBtn.addEventListener('click', () => {
 						try {
+							resultBox.textContent = '';
 							// Get the code from the code box
-							const code = codeBox.textContent.trim();
+							const code = codeBox.textContent.toString();
+							
+							console.log = function(msg) {
+								resultBox.textContent += msg;
+							};
 
 							// Execute the code
-							'use strict';
-							const result = eval(code);
+							eval(code);
 
-							// Display the result in the result box
-							resultBox.textContent = result;
 						} catch (error) {
 							// Display any errors in the result box
 							resultBox.textContent = error.message;
