@@ -2,7 +2,8 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Parallax Slideshow</title>
+  <title>Programming Languages</title>
+  <link rel="icon" href="img/icons8-javascript-96.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 <link rel="stylesheet" href="./style.css">
 
@@ -109,19 +110,45 @@
 			<div class="slideshow__slide-caption-textcontent">
 				<div class="container js-parallax" data-speed="2" data-position="top" data-target="#js-header">
 					<h1 class="slideshow__slide-caption-title">Lorem, ipsum.</h1>
-					<a class="slideshow__slide-caption-content -load o-hsub -link" href="#">
+					<a class="slideshow__slide-caption-content -load o-hsub -link">
 						<pre class="slideshow__slide-caption-content -code">
-							<code>
+							<code id="codeBox" contenteditable="true">
 for(i=0; i<10; i++){
 	console.log('Hello World');
 }
 							</code>
 						</pre>
 					</a>
-					<button></button>
-					<span id="codebox" class="slideshow__slide-caption-content -coderun">
+					<span id="resultBox" class="slideshow__slide-caption-content -coderun">
 
 					</span>
+					<button id="execBtn" class="o-button -white">Executar</button>
+					<script>
+						// Get references to the code and result elements
+						const codeBox = document.getElementById('codeBox');
+						const resultBox = document.getElementById('resultBox');
+
+						// Get reference to the execute button
+						const executeBtn = document.getElementById('execBtn');
+
+						// Add click event listener to execute button
+						executeBtn.addEventListener('click', () => {
+						try {
+							// Get the code from the code box
+							const code = codeBox.textContent.trim();
+
+							// Execute the code
+							'use strict';
+							const result = eval(code);
+
+							// Display the result in the result box
+							resultBox.textContent = result;
+						} catch (error) {
+							// Display any errors in the result box
+							resultBox.textContent = error.message;
+						}
+						});
+					</script>
 				</div>
 			</div>
 		</div>

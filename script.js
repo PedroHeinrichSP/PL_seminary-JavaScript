@@ -26,16 +26,6 @@ class Slideshow {
     this.autoplay = this.maxSlide > 1 ? options.autoplay : false;
 
     this.$el.on('click', '.js-slider-home-next', event => this.nextSlide());
-    $(document).on('keydown', event => {
-      if (event.keyCode === 39) { // Check if right arrow key is pressed
-        this.nextSlide();
-      }
-    });
-    $(document).on('keydown', event => {
-      if (event.keyCode === 37) { // Check if left arrow key is pressed
-        this.prevSlide();
-      }
-    });
     this.$el.on('click', '.js-slider-home-prev', event => this.prevSlide());
     this.$el.on('click', '.js-pagination-item', event => {
       if (!this.isAnimating) {
@@ -168,3 +158,5 @@ class Slideshow {
 
   addLoadClass();
 })();
+
+

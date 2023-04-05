@@ -453,7 +453,7 @@ body[data-route-option="prev-section"] .slideshow__slide-caption-subtitle.-load,
   top:auto;
   right:0; 
   display: inline-block;
-  margin: 0 20% 0 55%;
+  margin: 0 20% 5% 55%;
   padding: 1.875rem 1.875rem 1.875rem 1.875rem;
   font-size: large;
   text-align: left;
@@ -462,8 +462,19 @@ body[data-route-option="prev-section"] .slideshow__slide-caption-subtitle.-load,
   border-radius: 5px;
   border-color: #ffffff;
   text-indent: 1.875rem;
-  width: 25vmax;
-  height: 25vmax;
+  height: 75%;
+  aspect-ratio: 1/1;
+}
+
+.slideshow__slide-caption-content.-execBtn {
+  position: relative;
+  top:auto;
+  right:0; 
+  display: inline-block;
+  margin: 0 20% 5% 55%;
+  padding: 1.875rem 1.875rem 1.875rem 1.875rem;
+  font-size: large;
+  text-align: left;
 }
 
 .slideshow__slide-caption-content.-load {
