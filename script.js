@@ -34,6 +34,13 @@ class Slideshow {
       }
     });
 
+    this.$el.on('click', '#sumario', event => {
+      if (!this.isAnimating) {
+        this.preventClick();
+        this.goToSlide(event.target.dataset.slide);
+      }
+    });
+
     this.init();
   }
 
