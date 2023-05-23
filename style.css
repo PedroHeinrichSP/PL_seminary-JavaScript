@@ -1,3 +1,25 @@
+.axis path{
+  fill: none;
+  stroke-width: 2px;
+  stroke: #222;
+}
+.axis line{
+  fill: none;
+  stroke-width: 1px;
+  stroke: #222;
+}
+.axis text{
+  font-size: 10px;
+}
+path.link{
+  stroke-width: 2px;
+  opacity: 0.6;
+}
+text.label-text{
+  font-size: 12px;
+
+}
+
 .pagination {
   position: absolute !important;
   width: 100%;

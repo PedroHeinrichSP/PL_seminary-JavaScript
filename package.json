@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "d3kit-timeline": "^2.0.1"
+  }
+}
